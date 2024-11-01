@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collections | Authentication</title>
+    <script type="module" src="public/js/main.js" defer></script>
+  <body class="flex justify-center items-center h-screen bg-gray-100">
+    <section class="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+      <h1 class="text-center text-2xl font-semibold mb-6 text-primary">Authentication</h1>
+      <form action="public/feed.html" method="POST" class="space-y-4" >
+        <div>
+          <label for="email" class="block text-sm font-medium text-primary">Email</label>
+          <input
+          type="email"
+            id="email"
+            name="email"
+            required
+            class="mt-1 w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-hover focus:border-transparent"
+            placeholder="big@bird.com"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+            title="Please enter a valid email address."
+          />
+        </div>
+        <div>
+          <label for="password" class="block text-sm font-medium text-primary">Password</label>
+          <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          minlength="8"
+          class="mt-1 w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-hover focus:border-transparent"
+          placeholder="••••••••"
+          title="Password must be at least 8 characters long."
+          />
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="w-full py-2 px-4 bg-accent text-white font-medium rounded hover:bg-accent-hover"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
