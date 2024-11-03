@@ -1,39 +1,46 @@
 import '../css/style.css';
 
+// Toggle dropdown menu
 function toggleDropdown() {
     const dropdown = document.getElementById('dropdown-menu');
     dropdown.classList.toggle('hidden');
 }
 
+// Event listeners for dropdown and accordion
 document.addEventListener('DOMContentLoaded', () => {
+    // Dropdown toggle
     const button = document.getElementById('menu-button');
-    button.addEventListener('click', toggleDropdown);
-    
-    // Event listeners for dropdown menu items
+    if (button) {
+        button.addEventListener('click', toggleDropdown);
+    }
+
+    // Dropdown menu items
     const comicsMenuItem = document.getElementById('menu-item-0');
-    comicsMenuItem.addEventListener('click', () => loadForm('comics'));
-    
+    if (comicsMenuItem) comicsMenuItem.addEventListener('click', () => loadForm('comics'));
+
     const actionFiguresMenuItem = document.getElementById('menu-item-1');
-    actionFiguresMenuItem.addEventListener('click', () => loadForm('action-figures'));
+    if (actionFiguresMenuItem) actionFiguresMenuItem.addEventListener('click', () => loadForm('action-figures'));
 
     const ccgMenuItem = document.getElementById('menu-item-2');
-    ccgMenuItem.addEventListener('click', () => loadForm('ccg'));
+    if (ccgMenuItem) ccgMenuItem.addEventListener('click', () => loadForm('ccg'));
 
     const tcgMenuItem = document.getElementById('menu-item-3');
-    tcgMenuItem.addEventListener('click', () => loadForm('tcg'));
+    if (tcgMenuItem) tcgMenuItem.addEventListener('click', () => loadForm('tcg'));
 
+    // Accordion buttons
+    const accordionButtons = document.querySelectorAll('[data-accordion-button]');
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const contentId = button.getAttribute('data-target');
+            toggleAccordion(contentId);
+        });
+    });
 });
 
-document.addEventListener('click', function(event) {
-    const dropdown = document.getElementById('dropdown-menu');
-    const button = document.getElementById('menu-button');
-    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
-        dropdown.classList.add('hidden');
-    }
-});
-
+// Load different forms
 async function loadForm(type) {
     const contentSection = document.getElementById('content-section');
+    if (!contentSection) return;
 
     contentSection.innerHTML = '';
 
@@ -57,5 +64,27 @@ async function loadForm(type) {
         }
     } catch (err) {
         console.error(`Error loading the ${type} form module:`, err);
+    }
+}
+
+// Toggling accordion
+function toggleAccordion(contentId) {
+    if (!contentId) {
+        console.error('Content ID is not provided to toggleAccordion function.');
+        return;
+    }
+
+    const content = document.getElementById(contentId);
+    const icon = document.getElementById(`icon-${contentId}`);
+    
+    if (!content) {
+        console.error(`Element with ID ${contentId} not found.`);
+        return;
+    }
+    
+    const isOpen = content.classList.toggle('hidden');
+    
+    if (icon) {
+        icon.classList.toggle('rotate-180');
     }
 }
