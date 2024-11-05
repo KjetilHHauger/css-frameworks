@@ -1,4 +1,4 @@
-import '../css/main.css';
+import '../css/style.css';
 
 // Toggle dropdown menu
 function toggleDropdown() {
