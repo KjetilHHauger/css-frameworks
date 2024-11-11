@@ -1,78 +1,80 @@
-CSS Frameworks Project
+# CSS Frameworks Project
 
-This is a simple front-end project built with Tailwind CSS and Vite to explore and learn Tailwind's utility-first styling approach. The project includes static pages: login, feed, create and profile.
+This is a simple front-end project built with [Tailwind CSS](https://tailwindcss.com/) and [Vite](https://vitejs.dev/) to explore and learn Tailwind's utility-first styling approach. The project includes static pages: login, feed, create, and profile.
 
-Project Structure
+## Project Structure
 
-Pages:
+### Pages:
 
-login: The main login page of the application.
+- **login**: The main login page of the application.
+- **feed**: Displays the main feed of content.
+- **create**: Forms to create lists.
+- **profile**: A user profile page.
 
-feed: Displays the main feed of content.
+## Getting Started
 
-create: Forms to creat lists
+### Prerequisites
 
-profile: A user profile page.
+- Node.js (v16+ recommended)
+- npm (comes with Node.js) or yarn
 
-Getting Started
+### Installation
 
-Prerequisites
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd css-frameworks
+   ```
 
-Node.js (v16+ recommended)
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-npm (comes with Node.js) or yarn
-
-Installation
-
-Clone the repository:
-
-git clone <repository-url>
-cd css-frameworks
-
-Install dependencies:
-
-npm install
-
-Running the Project
+### Running the Project
 
 To start a development server with live reloading:
 
+```bash
 npm run dev
+```
 
-This will launch the app on http://localhost:3000, or another available port.
+This will launch the app on `http://localhost:3000`, or another available port.
 
-Building the Project
+### Building the Project
 
 To build the project for production, run:
 
+```bash
 npm run build
+```
 
-This will create an optimized build in the dist folder.
+This will create an optimized build in the `dist` folder.
 
-Preview the Production Build
+### Preview the Production Build
 
 To preview the production build:
 
+```bash
 npm run preview
+```
 
 This will serve the production build on a local server.
 
-Project Configuration
+## Project Configuration
 
-The main configuration for Vite is in vite.config.js, which specifies the following entry points:
+The main configuration for Vite is in `vite.config.js`, which specifies the following entry points:
 
-index.html (login page)
+- `index.html` (login page)
+- `src/create.html` (creation page)
+- `src/feed.html` (feed page)
+- `src/profile.html` (profile page)
 
-src/create.html (creation page)
+## Using Tailwind CSS
 
-src/feed.html (feed page)
+Tailwind CSS is configured in the project’s PostCSS configuration, so you can start using utility classes right away in your HTML files. Refer to [Tailwind’s documentation](https://tailwindcss.com/docs) for guidance on using the various classes.
 
-src/profile.html (profile page)
-
-Using Tailwind CSS
-
-Tailwind CSS is configured in the project’s PostCSS configuration, so you can start using utility classes right away in your HTML files. Refer to Tailwind’s documentation for guidance on using the various classes.
-
-License
+## License
 
 This project is intended for personal and educational use.
+
